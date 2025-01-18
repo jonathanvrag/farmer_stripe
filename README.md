@@ -16,6 +16,7 @@ Este proyecto es una integración con Stripe para gestionar la visualización de
   - `cancel.html`: Página que se muestra cuando el pago es cancelado.
   - `success.html`: Página que se muestra cuando el pago es exitoso.
 - `.gitignore`: Archivo para ignorar archivos y directorios específicos en Git.
+- `architecture_graphic.png`: Graficación de la arquitectura del proyecto.
 - `README.md`: Este archivo.
 
 ## Instalación
