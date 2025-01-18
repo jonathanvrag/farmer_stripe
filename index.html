@@ -1,29 +1,32 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./css/styles.css">
-  <title>Farmer - Stripe</title>
-</head>
-<body>
-  <div class="container">
-    <h1>Farmer - Stripe</h1>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <title>Farmer - Stripe</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Farmer - Stripe</h1>
+    </div>
 
-  <section class="courses" id="courses">
+    <!-- Sección que contendrá las tarjetas de los cursos -->
+    <section class="courses" id="courses">
+      <!-- Las tarjetas de cursos se insertarán aquí dinámicamente -->
+    </section>
 
-  </section>
+    <!-- Plantilla para crear las tarjetas de cursos -->
+    <template id="coursesCard-template">
+      <figure class="coursesCard-template--card">
+        <img />
+        <figcaption></figcaption>
+      </figure>
+    </template>
 
-  <template id="coursesCard-template">
-    <figure class="coursesCard-template--card">
-      <img>
-      <figcaption></figcaption>
-    </figure>
-  </template>
-
-  <!-- Estoy conectando la api de Stripe para poder hacer uso de sus funciones. -->
-  <script src="https://js.stripe.com/v3/"></script>
-  <script src="js/script.js" type="module"></script>
-</body>
+    <!-- Importa la librería de Stripe -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Importa el script principal de la aplicación -->
+    <script src="js/script.js" type="module"></script>
+  </body>
 </html>
