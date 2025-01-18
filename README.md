@@ -22,33 +22,35 @@ Este proyecto es una integración con Stripe para gestionar la visualización de
 
 1. Clona el repositorio:
 
-    ```sh
-    git clone https://github.com/jonathanvrag/farmer_stripe.git
+   ```sh
+   git clone https://github.com/jonathanvrag/farmer_stripe.git
 
-    ```
+   ```
 
 2. Navega al directorio del proyecto:
 
-    ```sh
-    cd farmer_stripe
+   ```sh
+   cd farmer_stripe
 
-    ```
+   ```
 
 3. Crea un archivo dentro de la carpeta js llamado env.js, el cual debe tener la siguiente estructura:
 
-    export default {
-      public:
-        'XXXXXXXXXXXXXXXXXXXXXX',
-      secret:
-        'XXXXXXXXXXXXXXXXXXXXXX',
-    };
+   ```sh
+   export default {
+     public:
+       'XXXXXXXXXXXXXXXXXXXXXX',
+     secret:
+       'XXXXXXXXXXXXXXXXXXXXXX',
+   };
+   ```
 
 Cabe resaltar que dichas claves son obtenidas al crear una cuenta en Stripe, se debe loguear e ir a las
-opciones de desarrollador, allí se podrá encontrar dicha información. 
+opciones de desarrollador, allí se podrá encontrar dicha información.
 
-4. Dentro del dashboard de Stripe y estando logueado, se debe dirigir a la configuración/pagos/Checkout 
-y Payment Links, allí se debe dirigir hasta al final y habilitar la opción: Habilitar la integración
-sólo de cliente (Dicho proceso se hace una sola vez).
+4. Dentro del dashboard de Stripe y estando logueado, se debe dirigir a la configuración/pagos/Checkout
+   y Payment Links, allí se debe dirigir hasta al final y habilitar la opción: Habilitar la integración
+   sólo de cliente (Dicho proceso se hace una sola vez).
 
 ## Uso
 
@@ -60,3 +62,7 @@ sólo de cliente (Dicho proceso se hace una sola vez).
 ## Advertencia
 
 Nota de Seguridad: No expongas la clave secreta de la API de Stripe en el cliente. Esta lógica debería estar en el servidor para evitar vulnerabilidades de seguridad.
+
+## Lincencia
+
+Código realizado por Jonathan Vera - 2025
