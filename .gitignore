@@ -1,0 +1,52 @@
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+
+# Package managers
+/node_modules/
+/bower_components/
+/vendor/
+
+# Local development environment files
+.DS_Store
+Thumbs.db
+
+# Editor backups and temporary files
+*~
+.*.swp
+*.swo
+*.bak
+.#*
+
+# Build directories
+/build/
+/dist/
+/out/
+
+# Common IDE/editor files
+.idea/
+.vscode/
+*.iml
+
+# Log files
+*.log
+
+# Deployment specific files
+.deploy*/
+
+# OS specific files
+desktop.ini
+
+# Cache files
+.sass-cache/
+
+# Miscellaneous files commonly ignored
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# envs
+.env
