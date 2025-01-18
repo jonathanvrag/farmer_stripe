@@ -4,6 +4,7 @@ const $courses = document.getElementById('courses');
 const $template = document.getElementById('coursesCard-template').content;
 const $fragment = document.createDocumentFragment();
 const options = { headers: { Authorization: `Bearer ${KEYS.secret}` } };
+const formatPrice = num => `${num.slice(0, -2)}.${num.slice(-2)}`
 
 let products, prices;
 
@@ -21,10 +22,14 @@ Promise.all([
         product => product.id === element.product
       );
 
-      $template.querySelector('.coursesCard-template--card').setAttribute('data-price', element.id);
+      $template
+        .querySelector('.coursesCard-template--card')
+        .setAttribute('data-price', element.id);
       $template.querySelector('img').src = productData[0].images[0];
       $template.querySelector('img').alt = productData[0].name;
-      $template.querySelector('figcaption').innerHTML = `${productData[0].name} ${element.unit_amount_decimal} ${element.currency}`
+      $template.querySelector('figcaption').innerHTML = `${
+        productData[0].name
+      } ${formatPrice(element.unit_amount_decimal)} ${element.currency.toUpperCase()}`;
 
       let $clone = document.importNode($template, true);
       $fragment.appendChild($clone);
