@@ -1,0 +1,50 @@
+body {
+  background-color: #1e1e1e;
+  color: #d0d0d0;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.container h1 {
+  color: #349769;
+}
+
+.courses {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+}
+
+.coursesCard-template--card {
+  background-color: #2b2b2b;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.coursesCard-template--card:hover {
+  transform: scale(1.05);
+}
+
+.coursesCard-template--card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.coursesCard-template--card figcaption {
+  padding: 1rem;
+  font-size: 1.2rem;
+}
