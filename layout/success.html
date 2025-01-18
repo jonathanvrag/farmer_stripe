@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/success.css" />
+    <title>Pago Exitoso</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>¡Pago Exitoso!</h1>
+      <p>Gracias por tu compra.</p>
+
+      <div id="payment-details"></div>
+
+      <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const sessionId = urlParams.get('session_id');
+
+        fetch(`/checkout-session?sessionId=${sessionId}`)
+          .then(res => res.json())
+          .then(data => {
+            const detailsDiv = document.getElementById('payment-details');
+            detailsDiv.innerHTML = `
+                        <p>ID de la sesión: ${data.id}</p>
+                        <p>Cliente: ${data.customer_details.name}</p>
+                        <p>Email: ${data.customer_details.email}</p>
+                        <p>Cantidad: ${data.amount_total / 100} ${
+              data.currency
+            }</p>
+                    `;
+          })
+          .catch(error => {
+            console.error('Error al obtener detalles del pago:', error);
+          });
+      </script>
+    </div>
+  </body>
+</html>

@@ -44,3 +44,22 @@ Promise.all([
 
     $courses.innerHTML = `Error ${error.status}: ${message}`;
   });
+
+document.addEventListener('click', event => {
+  if (event.target.matches('.coursesCard-template--card *')) {
+    let priceId = event.target.parentElement.getAttribute('data-price');
+
+    Stripe(KEYS.public)
+      .redirectToCheckout({
+        lineItems: [{ price: priceId, quantity: 1 }],
+        mode: 'payment',
+        successUrl: 'http://127.0.01:5500/layout/success.html',
+        cancelUrl: 'http://127.0.01:5500/layout/cancel.html',
+      })
+      .then(response => {
+        if (response.error) {
+          $courses.insertAdjacentElement('afterend', response.error.message);
+        }
+      });
+  }
+});
